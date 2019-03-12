@@ -1,7 +1,7 @@
 {
-  "name": "trellowebhooknode",
+  "name": "nodewebhookpost",
   "version": "1.0.0",
-  "description": "test trello webhook on callback",
+  "description": "sample app to perform POST and receive POSTs",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
