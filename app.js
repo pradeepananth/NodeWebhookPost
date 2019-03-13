@@ -40,15 +40,14 @@ app.post("/api/webhook", (req, res) => {
   let postBackUrl = 'http://localhost:3000/api/callback';
   
   axios.post(postBackUrl, bodyJson)
-  .then((res) => {
-    console.log(`statusCode: ${res.status}`);
-    console.log(res);
-    res.sendStatus(200);
+  .then((response) => {
+    console.log(`statusCode: ${response.status}`);
   })
   .catch((error) => {
     console.error(error);
-    res.sendStatus(500);
+    res.send(500)
   })  
+  res.sendStatus(200)
 }
 );
 
@@ -56,7 +55,7 @@ app.post("/api/webhook", (req, res) => {
 app.post("/api/callback", (req, res) => {
   console.log("received request on " + req.url);
   let bodyJson = JSON.stringify(req.body);
-  console.log("request body: " + bodyJson);  
-  res.sendStatus(200);
+  console.log("request body: " + bodyJson);
+  res.sendStatus(200)
 }
 );
